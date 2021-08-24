@@ -31,7 +31,7 @@ circle_img_label = Label(image=circle, bg="white")
 
 # Green tick to signify completion
 tick_img = (Image.open("images/green_tick.png"))
-resized_img = tick_img.resize((280, 280), Image.ANTIALIAS)
+resized_img = tick_img.resize((180, 180), Image.ANTIALIAS)
 tick = ImageTk.PhotoImage(resized_img)
 tick_img_label = Label(image=tick, bg="white")
 
@@ -44,7 +44,7 @@ tick_img_label.grid(row=0, column=0)
 Creation of widgets that will be inflated onto the bottom frame
 """
 # Label for the word "Completed!"
-ngtCleaner_label = Label(root, text="Completed!", bg="white", font=("Arial bold", 18))
+ngtCleaner_label = Label(root, text="Completed!", bg="white", font=("Arial bold", 24))
 
 # Start Cleaning Button
 start_btn_img = PhotoImage(file="images/startnewset_btn.PNG")

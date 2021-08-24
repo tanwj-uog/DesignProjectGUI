@@ -46,7 +46,7 @@ doctor_img_label.grid(row=0, column=0)
 Creation of widgets that will be inflated onto the bottom frame
 """
 # Label for the word "NGT Cleaner"
-ngtCleaner_label = Label(root, text="NGT Cleaner", bg="white", font=("Arial bold", 18))
+ngtCleaner_label = Label(root, text="NGT Cleaner", bg="white", font=("Arial bold", 24))
 
 # Start Cleaning Button
 start_btn_img = PhotoImage(file="images/start_btn.PNG")
