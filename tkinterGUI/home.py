@@ -4,20 +4,22 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title('Home')
-root.geometry('{}x{}'.format(720, 480))
+root.geometry('{}x{}'.format(800, 480))
 root['background'] = '#FFFFFF'
 
 """
 Creating and laying out all of the main containers
 """
 # create all of the main containers
-top_frame = Frame(root, bg='white', width=800, height=300)
-bottom_frame = Frame(root, bg='white', width=800, height=180)
+top_frame = Frame(root, bg='white', width=800, height=250)
+#middle_frame = Frame(root, bg='gray', width=800, height=50)
+bottom_frame = Frame(root, bg='white', width=800, height=130)
 
 # layout all of the main containers
 root.grid_rowconfigure(1, weight=1)
 root.grid_columnconfigure(0, weight=1)
 top_frame.grid(row=0, sticky="ew")
+#middle_frame.grid(row=1, sticky="ew")
 bottom_frame.grid(row=1, sticky="ew")
 
 """
@@ -31,7 +33,7 @@ circle_img_label = Label(image=circle, bg="white")
 
 # Doctor holding syringe illustration
 doctor_img = (Image.open("images/doctor.png"))
-resized_img = doctor_img.resize((190, 308), Image.ANTIALIAS)
+resized_img = doctor_img.resize((133, 216), Image.ANTIALIAS)
 doctor = ImageTk.PhotoImage(resized_img)
 doctor_img_label = Label(image=doctor, bg="white")
 

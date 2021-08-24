@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 
 root = Tk()
-root.title('Home')
+root.title('Cleaning')
 root.geometry('{}x{}'.format(800, 480))
 root['background'] = '#FFFFFF'
 
@@ -46,20 +46,23 @@ timer_label = Label(root, text="00:01:00", bg="white", font=("Arial bold", 24))
 stop_img = (Image.open("images/stop.PNG"))
 stop = ImageTk.PhotoImage(stop_img)
 stop_btn = Button(root, image=stop,
-                       borderwidth=0, bg="white")
+                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 pause_img = (Image.open("images/pause.PNG"))
 pause = ImageTk.PhotoImage(pause_img)
 pause_btn = Button(root, image=pause,
-                       borderwidth=0, bg="white")
+                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0 )
+# Temp & Humidity
+dht_label = Label(root, text="28°C\n30%", bg="white", font=("Arial bold", 24))
 
 # Inflating the widgets in the top frame
 circle_img_label.grid(row=0, column=0, sticky=NW)
 bubble_img_label.grid(row=0, column=0, sticky=NS)
+dht_label.grid(row=0, column=0, sticky=NE)
 
 # Inflating the widgets in the bottom frame
 cleaningNGT_label.grid(row=1, column=0, sticky=N)
-timer_label.grid(row=1, column=0, pady=(0,50))
+timer_label.grid(row=1, column=0, pady=(35,0))
 stop_btn.grid(row=1, column=0, sticky=SW)
 pause_btn.grid(row=1, column=0, sticky=SE)
 
