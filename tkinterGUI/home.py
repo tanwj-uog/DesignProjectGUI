@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title('Home')
-root.geometry('{}x{}'.format(800, 480))
+root.geometry('{}x{}'.format(720, 480))
 root['background'] = '#FFFFFF'
 
 """
@@ -49,7 +49,7 @@ ngtCleaner_label = Label(root, text="NGT Cleaner", bg="white", font=("Arial bold
 # Start Cleaning Button
 start_btn_img = PhotoImage(file="images/start_btn.PNG")
 start_btn = Button(root, image=start_btn_img,
-             borderwidth=0, bg="white")
+             borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Inflating the widgets in the bottom frame
 ngtCleaner_label.grid(row=1, column=0, sticky=N)

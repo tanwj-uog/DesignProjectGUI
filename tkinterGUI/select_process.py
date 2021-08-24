@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 root.title('Home')
-root.geometry('{}x{}'.format(800, 480))
+root.geometry('{}x{}'.format(720, 480))
 root['background'] = '#FFFFFF'
 
 """
@@ -35,24 +35,32 @@ circle = ImageTk.PhotoImage(resized_img)
 circle_img_label = Label(image=circle, bg="white")
 
 # Full Process Button
-fullprocess_btn_img = PhotoImage(file="images/fullprocess_btn.PNG")
-fullprocess_btn = Button(root, image=fullprocess_btn_img,
-             borderwidth=0, bg="white")
+fullprocess_btn_img = (Image.open("images/fullprocess_btn.PNG"))
+resized_img = fullprocess_btn_img.resize((318, 54), Image.ANTIALIAS)
+fullprocess = ImageTk.PhotoImage(resized_img)
+fullprocess_btn = Button(root, image=fullprocess,
+             borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Clean Only Button
-cleanonly_btn_img = PhotoImage(file="images/cleanonly_btn.PNG")
-cleanonly_btn = Button(root, image=cleanonly_btn_img,
-                       borderwidth=0, bg="white")
+cleanonly_btn_img = (Image.open("images/cleanonly_btn.PNG"))
+resized_img = cleanonly_btn_img.resize((318, 54), Image.ANTIALIAS)
+cleanonly = ImageTk.PhotoImage(resized_img)
+cleanonly_btn = Button(root, image=cleanonly,
+                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Sterilise Only Button
-steriliseonly_btn_img = PhotoImage(file="images/steriliseonly_btn.PNG")
-steriliseonly_btn = Button(root, image=steriliseonly_btn_img,
-                       borderwidth=0, bg="white")
+steriliseonly_btn_img = (Image.open("images/steriliseonly_btn.PNG"))
+resized_img = steriliseonly_btn_img.resize((318, 54), Image.ANTIALIAS)
+steriliseonly = ImageTk.PhotoImage(resized_img)
+steriliseonly_btn = Button(root, image=steriliseonly,
+                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Dry Only Button
-dryonly_btn_img = PhotoImage(file="images/dryonly_btn.PNG")
-dryonly_btn = Button(root, image=dryonly_btn_img,
-                       borderwidth=0, bg="white")
+dryonly_btn_img = (Image.open("images/dryonly_btn.PNG"))
+resized_img = steriliseonly_btn_img.resize((318, 54), Image.ANTIALIAS)
+dryonly = ImageTk.PhotoImage(resized_img)
+dryonly_btn = Button(root, image=dryonly,
+                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Inflating the widgets in the first frame
 circle_img_label.grid(row=0, column=0, sticky=NW)
