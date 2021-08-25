@@ -1,5 +1,9 @@
+import os
 from tkinter import *
 from PIL import ImageTk, Image
+import time
+import datetime
+from tkinter import messagebox
 
 cleaning = Tk()
 cleaning.title('Cleaning')
@@ -38,6 +42,52 @@ bubble_img_label = Label(image=bubble, bg="white")
 # "Cleaning NGT" label widget
 cleaningNGT_label = Label(cleaning, text="Cleaning NGT", bg="white", font=("Arial bold", 24))
 
+# Declaration of variables for timer
+hour = "0"
+minute = "0"
+second = "5"
+
+
+def sterilisingCallback():
+    cleaning.destroy()
+    os.system('python3 sterilising.py')
+
+
+# timer
+def timer(hour, minute, second):
+    current_time = int(hour) * 3600 + int(minute) * 60 + int(second)
+    while current_time > 0:
+
+        # divmod(firstvalue = temp//60, secondvalue = temp%60)
+        mins, secs = divmod(current_time, 60)
+
+        # Converting the input entered in mins or secs to hours,
+        # mins ,secs(input = 110 min --> 120*60 = 6600 => 1hr :
+        # 50min: 0sec)
+        hours = 0
+        if mins > 60:
+            # divmod(firstvalue = temp//60, secondvalue
+            # = temp%60)
+            hours, mins = divmod(mins, 60)
+
+        # using format () method to store the value up to
+        # two decimal places
+
+        current_time -= 1
+        conversion = datetime.timedelta(seconds=current_time)
+        converted_time = str(conversion)
+        timer_label.config(text=converted_time)
+
+        # updating the GUI window after decrementing the
+        # temp value every time
+
+        cleaning.update()
+        time.sleep(1)
+
+        if (current_time == 0):
+            # messagebox.showinfo("Time Countdown", "Time's up ")
+            sterilisingCallback()
+
 # Timer widget
 timer_label = Label(cleaning, text="00:01:00", bg="white", font=("Arial bold", 24))
 
@@ -65,4 +115,5 @@ timer_label.grid(row=1, column=0, pady=(35,0))
 stop_btn.grid(row=1, column=0, sticky=SW)
 pause_btn.grid(row=1, column=0, sticky=SE)
 
+timer(hour,minute,second)
 cleaning.mainloop()

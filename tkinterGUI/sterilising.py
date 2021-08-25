@@ -1,3 +1,4 @@
+import os
 from tkinter import *
 from PIL import ImageTk, Image
 import time
@@ -47,6 +48,10 @@ hour = "0"
 minute = "0"
 second = "5"
 
+def dryingCallback():
+    root.destroy()
+    os.system('python3 drying.py')
+
 # timer 
 def timer(hour,minute,second):    
 
@@ -83,7 +88,8 @@ def timer(hour,minute,second):
         time.sleep(1)
 
         if (current_time == 0):
-             messagebox.showinfo("Time Countdown", "Time's up ")
+             #messagebox.showinfo("Time Countdown", "Time's up ")
+             dryingCallback()
         
 
 

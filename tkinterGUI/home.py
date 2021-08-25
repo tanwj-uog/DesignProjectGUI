@@ -1,7 +1,6 @@
 from time import sleep
 from tkinter import *
 from PIL import ImageTk, Image
-import sys
 import os
 
 root = Tk()
@@ -9,12 +8,14 @@ root.title('Home')
 root.geometry('{}x{}'.format(800, 480))
 root['background'] = '#FFFFFF'
 
-"""
-Creating and laying out all of the main containers
-"""
 def cleaningCallback():
     root.destroy()
     os.system('python3 cleaning.py')
+
+"""
+Creating and laying out all of the main containers
+"""
+
 
 # create all of the main containers
 top_frame = Frame(root, bg='white', width=800, height=250)

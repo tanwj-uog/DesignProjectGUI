@@ -1,3 +1,4 @@
+import os
 from tkinter import *
 from PIL import ImageTk, Image
 
@@ -6,6 +7,10 @@ root = Tk()
 root.title('Completed')
 root.geometry('{}x{}'.format(800, 480))
 root['background'] = '#FFFFFF'
+
+def homeCallback():
+    root.destroy()
+    os.system('python3 home.py')
 
 """
 Creating and laying out all of the main containers
@@ -48,7 +53,7 @@ ngtCleaner_label = Label(root, text="Completed!", bg="white", font=("Arial bold"
 
 # Start Cleaning Button
 start_btn_img = PhotoImage(file="images/startnewset_btn.PNG")
-start_btn = Button(root, image=start_btn_img,
+start_btn = Button(root, image=start_btn_img, command=homeCallback,
              borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Inflating the widgets in the bottom frame
