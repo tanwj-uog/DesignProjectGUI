@@ -1,22 +1,21 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
-
-root = Tk()
-root.title('Cleaning')
-root.geometry('{}x{}'.format(800, 480))
-root['background'] = '#FFFFFF'
+cleaning = Tk()
+cleaning.title('Cleaning')
+cleaning.geometry('{}x{}'.format(800, 480))
+cleaning['background'] = '#FFFFFF'
 
 """
 Creating and laying out all of the main containers
 """
 # create all of the main containers
-top_frame = Frame(root, bg='white', width=800, height=300)
-bottom_frame = Frame(root, bg='white', width=800, height=180)
+top_frame = Frame(cleaning, bg='white', width=800, height=300)
+bottom_frame = Frame(cleaning, bg='white', width=800, height=180)
 
 # layout all of the main containers
-root.grid_rowconfigure(1, weight=1)
-root.grid_columnconfigure(0, weight=1)
+cleaning.grid_rowconfigure(1, weight=1)
+cleaning.grid_columnconfigure(0, weight=1)
 top_frame.grid(row=0, sticky="ew")
 bottom_frame.grid(row=1, sticky="ew")
 
@@ -37,23 +36,23 @@ bubble = ImageTk.PhotoImage(resized_img)
 bubble_img_label = Label(image=bubble, bg="white")
 
 # "Cleaning NGT" label widget
-cleaningNGT_label = Label(root, text="Cleaning NGT", bg="white", font=("Arial bold", 24))
+cleaningNGT_label = Label(cleaning, text="Cleaning NGT", bg="white", font=("Arial bold", 24))
 
 # Timer widget
-timer_label = Label(root, text="00:01:00", bg="white", font=("Arial bold", 24))
+timer_label = Label(cleaning, text="00:01:00", bg="white", font=("Arial bold", 24))
 
 # Stop and Pause button widget
 stop_img = (Image.open("images/stop.PNG"))
 stop = ImageTk.PhotoImage(stop_img)
-stop_btn = Button(root, image=stop,
-                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
+stop_btn = Button(cleaning, image=stop,
+                  borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 pause_img = (Image.open("images/pause.PNG"))
 pause = ImageTk.PhotoImage(pause_img)
-pause_btn = Button(root, image=pause,
-                       borderwidth=0, bg="white", highlightthickness = 0, bd = 0 )
+pause_btn = Button(cleaning, image=pause,
+                   borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 # Temp & Humidity
-dht_label = Label(root, text="28°C\n30%", bg="white", font=("Arial bold", 24))
+dht_label = Label(cleaning, text="28°C\n30%", bg="white", font=("Arial bold", 24))
 
 # Inflating the widgets in the top frame
 circle_img_label.grid(row=0, column=0, sticky=NW)
@@ -66,4 +65,4 @@ timer_label.grid(row=1, column=0, pady=(35,0))
 stop_btn.grid(row=1, column=0, sticky=SW)
 pause_btn.grid(row=1, column=0, sticky=SE)
 
-root.mainloop()
+cleaning.mainloop()

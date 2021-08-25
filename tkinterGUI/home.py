@@ -1,6 +1,8 @@
+from time import sleep
 from tkinter import *
 from PIL import ImageTk, Image
-
+import sys
+import os
 
 root = Tk()
 root.title('Home')
@@ -10,6 +12,10 @@ root['background'] = '#FFFFFF'
 """
 Creating and laying out all of the main containers
 """
+def cleaningCallback():
+    root.destroy()
+    os.system('python3 cleaning.py')
+
 # create all of the main containers
 top_frame = Frame(root, bg='white', width=800, height=250)
 #middle_frame = Frame(root, bg='gray', width=800, height=50)
@@ -31,6 +37,7 @@ resized_img = circle_img.resize((130, 120), Image.ANTIALIAS)
 circle = ImageTk.PhotoImage(resized_img)
 circle_img_label = Label(image=circle, bg="white")
 
+
 # Doctor holding syringe illustration
 doctor_img = (Image.open("images/doctor.png"))
 resized_img = doctor_img.resize((133, 216), Image.ANTIALIAS)
@@ -50,11 +57,14 @@ ngtCleaner_label = Label(root, text="NGT Cleaner", bg="white", font=("Arial bold
 
 # Start Cleaning Button
 start_btn_img = PhotoImage(file="images/start_btn.PNG")
-start_btn = Button(root, image=start_btn_img,
+start_btn = Button(root,command=cleaningCallback, image=start_btn_img,
              borderwidth=0, bg="white", highlightthickness = 0, bd = 0)
 
 # Inflating the widgets in the bottom frame
 ngtCleaner_label.grid(row=1, column=0, sticky=N)
 start_btn.grid(row=1, column=0)
+
+
+# Method to launch first process window
 
 root.mainloop()
