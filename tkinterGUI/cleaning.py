@@ -48,9 +48,9 @@ minute = "0"
 second = "5"
 
 
-def sterilisingCallback():
+def dryingCallback():
     cleaning.destroy()
-    os.system('python3 sterilising.py')
+    os.system('python3 drying.py')
 
 
 # timer
@@ -86,7 +86,7 @@ def timer(hour, minute, second):
 
         if (current_time == 0):
             # messagebox.showinfo("Time Countdown", "Time's up ")
-            sterilisingCallback()
+            dryingCallback()
 
 # Timer widget
 timer_label = Label(cleaning, text="00:01:00", bg="white", font=("Arial bold", 24))

@@ -49,9 +49,9 @@ minute = "0"
 second = "5"
 
 
-def completedCallback():
+def sterilisingCallback():
     root.destroy()
-    os.system('python3 completed.py')
+    os.system('python3 sterilising.py')
 
 
 # timer
@@ -87,7 +87,7 @@ def timer(hour, minute, second):
 
         if (current_time == 0):
             # messagebox.showinfo("Time Countdown", "Time's up ")
-            completedCallback()
+            sterilisingCallback()
 
 # Timer widget
 timer_label = Label(root, text="00:05:00", bg="white", font=("Arial bold", 24))

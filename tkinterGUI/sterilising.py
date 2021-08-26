@@ -48,9 +48,9 @@ hour = "0"
 minute = "0"
 second = "5"
 
-def dryingCallback():
+def completedCallback():
     root.destroy()
-    os.system('python3 drying.py')
+    os.system('python3 completed.py')
 
 # timer 
 def timer(hour,minute,second):    
@@ -89,7 +89,7 @@ def timer(hour,minute,second):
 
         if (current_time == 0):
              #messagebox.showinfo("Time Countdown", "Time's up ")
-             dryingCallback()
+             completedCallback()
         
 
 
