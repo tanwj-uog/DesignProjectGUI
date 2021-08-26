@@ -7,6 +7,7 @@ root = Tk()
 root.title('Completed')
 root.geometry('{}x{}'.format(800, 480))
 root['background'] = '#FFFFFF'
+root.attributes("-fullscreen", True)
 
 def homeCallback():
     root.destroy()

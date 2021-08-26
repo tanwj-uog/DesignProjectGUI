@@ -10,6 +10,7 @@ root = Tk()
 root.title('Drying')
 root.geometry('{}x{}'.format(800, 480))
 root['background'] = '#FFFFFF'
+root.attributes("-fullscreen", True)
 
 """
 Creating and laying out all of the main containers

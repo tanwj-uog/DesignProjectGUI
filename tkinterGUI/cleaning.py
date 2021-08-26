@@ -9,6 +9,7 @@ cleaning = Tk()
 cleaning.title('Cleaning')
 cleaning.geometry('{}x{}'.format(800, 480))
 cleaning['background'] = '#FFFFFF'
+cleaning.attributes("-fullscreen", True)
 
 """
 Creating and laying out all of the main containers
